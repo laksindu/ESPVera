@@ -42,6 +42,7 @@ void ESPVera::_startAP(const char* apName){
         String getPassword = _server.arg("password");
 
         if(getSSID.length() > 0){
+            Serial.println("Saving Credentials:");
             _pref.begin("WiFi_cred",false);
             _pref.putString("SSID", getSSID);
             _pref.putString("password", getPassword);
