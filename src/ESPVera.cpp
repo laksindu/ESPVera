@@ -3,7 +3,7 @@
 ESPVera::ESPVera() : _server(80) {}
 
 void ESPVera::begin(const char* apName){
-    _perf.begin("WiFi_cred", true);
+    _pref.begin("WiFi_cred", true);
     String SSID = _pref.getString("SSID", "");
     String password = _pref.getString("password", "");
     _pref.end();
