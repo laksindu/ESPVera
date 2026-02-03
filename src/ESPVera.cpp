@@ -37,9 +37,9 @@ void ESPVera::_startAP(const char* apName){
     Serial.println("Access Point started");
     Serial.println(WiFi.softAPIP());
 
-    _server.on("/wifi", HTTP_POST,[this],(){
-        String getSSID = server.arg("ssid");
-        String getPassword = server.arg("password");
+    _server.on("/wifi", HTTP_POST,[this](){
+        String getSSID = _server.arg("ssid");
+        String getPassword = _server.arg("password");
 
         if(getSSID.length() > 0){
             _pref.begin("WiFi_cred",false);
